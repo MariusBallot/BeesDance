@@ -1,4 +1,35 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Avenir', sans-serif;
+    color:white;
+
+    body{
+        width: 100vw;
+        height:100vh;
+        overflow: hidden;
+
+
+    
+        
+        .bg{
+            width: 100vw;
+            height:100vh;
+            object-fit: cover;
+            z-index: -1;
+            position: absolute;
+            top:0;
+            left:0
+
+        }
+
+        .content{
+            position: absolute;
+
+
+            p.artError{
+                color:rgb(255, 0, 0)
+            }
+        }
+    }
 }
