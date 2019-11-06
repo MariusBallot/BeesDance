@@ -48,7 +48,7 @@ export default class Bees {
 
       var mix1 = new THREE.AnimationMixer(wing1)
       var mix2 = new THREE.AnimationMixer(wing2)
-
+      l
       this.mixerWing1.push(mix1)
       this.mixerWing2.push(mix2)
 
