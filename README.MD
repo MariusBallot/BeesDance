@@ -1,1 +1,1 @@
-# :bee: Bees dance :dance:
+# :bee: Bees dance
