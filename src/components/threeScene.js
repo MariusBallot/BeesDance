@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-import Crystal from './Crystal'
+import Planet from './Planet'
 import Bees from './Bees'
 
 import OrbitControls from "orbit-controls-es6";
@@ -16,8 +16,7 @@ class ThreeScene {
     this.controls;
     this.uniforms;
 
-    this.torus;
-    this.Crystal
+    this.Planet
     this.clock = new THREE.Clock();
     this.bees
     this.bind();
@@ -32,8 +31,8 @@ class ThreeScene {
 
     this.scene = new THREE.Scene();
 
-    this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    this.camera.position.set(0, 0, 5);
+    this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera.position.set(0, 5, 8);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.enabled = true;
     this.controls.maxDistance = 1500;
@@ -66,12 +65,10 @@ class ThreeScene {
     pointLight2.position.set(-10, -10, 0);
     this.scene.add(light, pointLight, pointLight2);
 
-    this.Crystal = new Crystal(this.scene)
+    this.Planet = new Planet(this.scene)
     this.bees = new Bees(this.scene)
 
-    this.torus = new THREE.Mesh(new THREE.TorusGeometry(2, 0.1, 10, 100), new THREE.MeshNormalMaterial())
-    this.torus.rotateX(1.7)
-    this.scene.add(this.torus)
+
 
     let sphere = new THREE.Mesh(new THREE.IcosahedronGeometry(2, 3), new THREE.ShaderMaterial({
       uniforms: this.uniforms,
@@ -87,7 +84,7 @@ class ThreeScene {
 
   update() {
     this.renderer.render(this.scene, this.camera);
-    this.Crystal.update()
+    this.Planet.update()
     this.bees.update(this.clock.getDelta())
   }
 

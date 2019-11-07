@@ -16,7 +16,6 @@ export default class Bees {
   }
 
   onLoad(obj) {
-    console.log(obj)
     for (let i = 0; i < this.beeCount; i++) {
       let aBee = obj.scene.clone()
       aBee.scale.set(0.05, 0.05, 0.05)
@@ -48,7 +47,6 @@ export default class Bees {
 
       var mix1 = new THREE.AnimationMixer(wing1)
       var mix2 = new THREE.AnimationMixer(wing2)
-      l
       this.mixerWing1.push(mix1)
       this.mixerWing2.push(mix2)
 
@@ -61,7 +59,6 @@ export default class Bees {
       this.bees.push(aBee)
       this.scene.add(rotator)
     }
-    console.log(this.bees)
   }
 
   update(delta) {
